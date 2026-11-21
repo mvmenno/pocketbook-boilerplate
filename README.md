@@ -2,7 +2,7 @@
 
 Minimal, modern starting point for native **PocketBook InkView** apps (C, CMake),
 with a one-command build → deploy → launch loop against
-[pbemu](../pbemu).
+[pbemu](https://codeberg.org/datyoma/pbemu).
 
 - **Toolchain:** Debian's stock `arm-linux-gnueabi(hf)` GCC 12 in a container.
   No 2014-era i386 `arm-obreey` toolchain is needed.
@@ -14,6 +14,15 @@ with a one-command build → deploy → launch loop against
   fetched by `./pb setup` (not committed).
 
 ## Quick start
+
+### Prerequisites
+- Podman OR Docker
+- Make sure to setup and run the pbemu repo first with the chosen firmware:
+https://codeberg.org/datyoma/pbemu
+
+- Make sure the repo is checked out at location: ../pbemu
+
+### Running the PocketBook application
 
 ```sh
 # once: build the toolchain image and fetch the SDK headers
