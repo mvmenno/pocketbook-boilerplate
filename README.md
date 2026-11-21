@@ -9,9 +9,8 @@ with a one-command build → deploy → launch loop against
 - **Libraries:** links directly against the `libinkview.so` from *your* staged
   firmware, so the ABI matches the device exactly. Soft/hard-float is
   auto-detected from the firmware libc.
-- **Headers:** official `inkview.h` & friends from
-  [pocketbook/SDK_6.3.0](https://github.com/pocketbook/SDK_6.3.0) (branch `6.5`, pinned),
-  fetched by `./pb setup` (not committed).
+- **Headers:** official `inkview.h` from
+  [pocketbook/SDK_6.3.0](https://github.com/pocketbook/SDK_6.3.0) 
 
 ## Quick start
 
@@ -100,7 +99,3 @@ for the full API. It is well commented.
   `0`, and the new task stays in the background. `tools/pb-launch.c` looks the
   task up and calls `SetActiveTask()`. pbemu's own `arm_probe launch` doesn't
   do this, so a launched app appears to hang.
-- The old `kotborealis/pocketbook-sdk-sample` + `SDK_481` approach fails on
-  modern hosts with an `as: loadlocale.c ... Assertion` crash. Its 32-bit
-  assembler chokes on the host locale (`LC_ALL=C` works around it). The
-  toolchain is also GCC 4.8.
